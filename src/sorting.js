@@ -82,9 +82,7 @@ export function sortClasses(
 }
 
 export function sortClassList(classList, { env }) {
-  let classNamesWithOrder = env.context.getClassOrder
-    ? env.context.getClassOrder(classList)
-    : getClassOrderPolyfill(classList, { env })
+  let classNamesWithOrder = getClassOrderPolyfill(classList, { env })
 
   return classNamesWithOrder
     .sort(([, a], [, z]) => {
